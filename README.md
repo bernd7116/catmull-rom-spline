@@ -36,3 +36,10 @@ Requires at least 4 control points. Fewer throws.
 - `catmullRomPoint(points, t)` — evaluate at global t in [0, 1]. Clamps out-of-range t.
 - `catmullRomSpline(points, numSamples)` — sample into `numSamples` points (integer >= 2).
 - `sampleSpline(points, numSamples)` — same, but returns `[t, point]` pairs.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
