@@ -1,6 +1,6 @@
 {
   "name": "catmull-rom-spline",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Interpolates smooth curves through control points using the Catmull-Rom basis functions.",
   "type": "module",
   "main": "src/index.js",
